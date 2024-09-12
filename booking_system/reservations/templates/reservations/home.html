@@ -1,0 +1,20 @@
+<!-- reservations/templates/reservations/home.html -->
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Головна сторінка</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Система бронювання</h1>
+    <p>Виберіть дію:</p>
+    <div class="btn-group-vertical" role="group" aria-label="Navigation">
+        <a href="{% url 'calendar_view' %}" class="btn btn-primary btn-lg mb-2">Перейти до календаря</a>
+        <a href="{% url 'room_list_view' %}" class="btn btn-secondary btn-lg mb-2">Переглянути доступні кімнати</a>
+        <a href="{% url 'booking_view' %}" class="btn btn-success btn-lg mb-2">Створити нове бронювання</a>
+    </div>
+</div>
+</body>
+</html>

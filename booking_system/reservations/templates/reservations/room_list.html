@@ -1,0 +1,41 @@
+<!-- reservations/templates/reservations/room_list.html -->
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Доступні кімнати</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Список доступних кімнат</h2>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Назва</th>
+            <th>Тип</th>
+            <th>Вмістимість</th>
+            <th>Ціна</th>
+            <th>Особливості</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for room in rooms %}
+            <tr>
+                <td>{{ room.name }}</td>
+                <td>{{ room.get_room_type_display }}</td>
+                <td>{{ room.capacity }}</td>
+                <td>{{ room.price }} грн</td>
+                <td>{{ room.features }}</td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="5" class="text-center">Немає доступних кімнат</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'home' %}" class="btn btn-secondary">На головну</a>
+</div>
+</body>
+</html>
